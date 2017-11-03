@@ -1,0 +1,27 @@
+{
+  "appName": "SWAT",
+  "version": "0.1.0",
+  "serverUrl": "http://10.223.185.81",
+  "serverPort": "80",
+  "apiPath": "ATOM_API/api",
+  "language" : "EN",
+  "dateFormat" : "dd/MM/yyyy",
+  "mongo": {
+    "user": "",
+    "password": "",
+    "port": 27017,
+    "host": "localhost",
+    "database":"swat"
+  },
+  "sqlserver" : {
+    "user": "sa",
+    "password": "itiditid",
+    "port": "",
+    "host": "10.223.185.81",
+    "database":"swat"
+  },
+  "module" :{
+    "isCORS": true,
+    "isSocket": false
+  }
+}

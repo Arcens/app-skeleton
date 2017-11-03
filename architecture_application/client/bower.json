@@ -1,0 +1,34 @@
+{
+  "name": "SWAT",
+  "dependencies": {
+	"jquery": "~2.1.3",
+	"angular": "1.5.8",
+	"angular-resource": "*",
+	"angular-animate": "*",
+	"angular-mocks": "*",
+	"angular-cookies": "*",
+	"angular-sanitize": "*",
+	"ui-router": "0.2.15",
+	"angular-ui-ace": "0.2.3",
+	"ace-builds": "1.1.9",
+	"underscore": "1.8.3",
+	"angular-breadcrumb": "0.4.0",
+	"bootstrap": "3.3.5",
+	"angular-bootstrap" : "*",	
+	"angular-loading-bar" : "*",
+	"angular-spinkit": "~0.3.3",
+	"moment": "*",
+	"angular-ui-notification" : "*",
+	"bootbox" : "*",
+	"js-sha256": "*"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "less/bootstrap.less",
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}

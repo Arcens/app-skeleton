@@ -1,0 +1,62 @@
+<div class="container-fluid">
+    <h3 ng-show="<$ moduleName $>Ctrl.data.<$ idAttributeName $>">Update <$ moduleName | capitalize $></h3>
+    <h3 ng-show="!<$ moduleName $>Ctrl.data.<$ idAttributeName $>">Create New <$ moduleName | capitalize $></h3>
+    <div class="well well-lg">
+        <div class="row">
+            <form class="form-horizontal" name="<$ moduleName $>form">               
+                {% for property in properties %}                  
+                {% if property.type == 'number' %}
+                <div class="form-group">
+                    <label for="<$ property.name $>" class="col-sm-2 control-label"><$ property.display_name | capitalize $> {% if property.required %}*{% endif %}</label>
+                    <div class="col-sm-10">
+                        <input type="number" ng-model="<$ moduleName $>Ctrl.data.<$ property.name $>" class="form-control" id="<$ property.name $>" {% if property.required  %}required{% endif %} {% if property.readonly %}readonly{% endif %} >
+                    </div>
+                </div>
+                {% elif property.type == 'date' %}
+                <div class="form-group">
+                    <label for="<$ property.name $>" class="col-sm-2 control-label"><$ property.display_name | capitalize $> {% if property.required %}*{% endif %}</label>
+                    <div class="col-sm-4">
+						<p class="input-group">
+						<input type="text" class="form-control" uib-datepicker-popup="<$ config.dateFormat $>" ng-model="<$ moduleName $>Ctrl.data.<$ property.name $>" is-open="<$ moduleName $>Ctrl.popup<$ property.name $>"  {% if property.required %}ng-required="true"{% endif %} {% if property.readonly %}readonly{% endif %} close-text="Close" />
+							<span class="input-group-btn">
+								<button type="button" class="btn btn-default" ng-click="<$ moduleName $>Ctrl.popup<$ property.name $> = !<$ moduleName $>Ctrl.popup<$ property.name $>"><i class="glyphicon glyphicon-calendar"></i></button>
+							</span>
+						</p>                       
+                    </div>
+                </div>			
+                {% elif property.type == 'boolean' %}
+                <div class="form-group">
+                    <label for="<$ property.name $>" class="col-sm-2 control-label"><$ property.display_name | capitalize $> {% if property.required %}*{% endif %}</label>
+                    <div class="col-sm-10">
+						<button type="button" class="btn btn-info" ng-model="<$ moduleName $>Ctrl.data.<$ property.name $>" uib-btn-checkbox btn-checkbox-true="true" btn-checkbox-false="false">
+							<span ng-show="<$ moduleName $>Ctrl.data.<$ property.name $>"><i class="glyphicon glyphicon-ok"></i>&nbsp;&nbsp;Yes</span>
+							<span ng-show="!<$ moduleName $>Ctrl.data.<$ property.name $>"><i class="glyphicon glyphicon-remove"></i>&nbsp;&nbsp;No</span>
+						</button>
+                    </div>
+                </div>                  
+                {% else %}
+                <div class="form-group">
+                    <label for="<$ property.name $>" class="col-sm-2 control-label"><$ property.display_name | capitalize $> {% if property.required %}*{% endif %}</label>
+                    <div class="col-sm-10">
+                        <input type="text" ng-model="<$ moduleName $>Ctrl.data.<$ property.name $>" class="form-control" id="<$ property.name $>" {% if property.required %}required{% endif %} {% if property.readonly %}readonly{% endif %} >
+                    </div>
+                </div>                    
+                {% endif %}
+                {% endfor %}
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-danger" ui-sref="app.<$ moduleName $>.list">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cancel
+                        </button>
+                        <button type="button" class="btn btn-info" ng-disabled="<$ moduleName $>form.$invalid" ng-click="<$ moduleName $>Ctrl.update( <$ moduleName $>Ctrl.data, <$ moduleName $>Ctrl.data.<$ idAttributeName $> , 'app.<$ moduleName $>.list')" ng-show="<$ moduleName $>Ctrl.data.<$ idAttributeName $>">
+                            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Update
+                        </button>
+                        <button type="button" class="btn btn-success"  ng-disabled="<$ moduleName $>form.$invalid" ng-click="<$ moduleName $>Ctrl.create( <$ moduleName $>Ctrl.data, 'app.<$ moduleName $>.list')" ng-show="! <$ moduleName $>Ctrl.data.<$ idAttributeName $>">
+                            <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> Create
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

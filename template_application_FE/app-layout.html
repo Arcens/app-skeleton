@@ -1,0 +1,23 @@
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-inner">
+            <ul class="nav navbar-nav">
+				<li><a ui-sref="app.index">Home</a></li>
+                                <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    Entities <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        {% for property in properties %}
+                        <li><a ui-sref="app.<$ property $>.list"><$ property | capitalize $></a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+            <p class="navbar-text pull-right" ng-show="login.isLoggedIn()">Signed in as <strong><a href="#" ng-click="login.logout()" class="navbar-link" uib-tooltip="Logout ?" tooltip-placement="left">{{ login.getUserName() }}</a></strong></p>
+			<p class="navbar-text pull-right" ng-show="!login.isLoggedIn()">You aren't logged in. Click <strong><a ui-sref="login" class="navbar-link">here</a></strong> to sign-in</p>
+        </div>
+    </div>
+</div>
+
+<div ui-view class="full_height"></div>

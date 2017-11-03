@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta http-equiv="x-ua-compatible" content="IE=Edge"/> 
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    
+    <meta charset="UTF-8">
+    <!-- bower:css-->
+    <!-- endbower-->
+    <link href="assets/css/bootstrap-3-vert-offset-shim.css" rel="stylesheet">
+	<link href="assets/css/custom.css" rel="stylesheet">
+    <title>{{config.appName}}</title>
+</head>
+{% block content %}
+<body ng-app="{{config.appName}}">
+
+<div ui-view></div>
+
+<!-- bower:js-->
+<!-- endbower-->
+{% endblock %}
+<script src="config.js"></script>
+<script src="app.js"></script>
+
+<script src="module/item/item.module.js"></script>
+<script src="module/item/manager/ItemManager.js"></script>
+
+<script src="module/login/login.module.js"></script>
+<script src="module/login/factory/UserFactory.js"></script>
+<script src="module/login/service/UserService.js"></script>
+<script src="module/login/controller/LoginController.js"></script>
+
+{% for file in filesToInjectIndex %}
+<script src="{{file}}"></script>
+{% endfor %}
+</body>
+</html>

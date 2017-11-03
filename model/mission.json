@@ -1,0 +1,98 @@
+{
+  "name": "mission",
+  "plural": "missions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type":"string",
+      "id": true,
+      "name":"id",
+      "display": false
+    },
+    "name": {
+      "type": "string",
+      "required": false
+    },
+    "is_confirmed": {
+      "type": "boolean",
+      "display_name" : "confirmed",
+      "required": true
+    },
+    "departure_datetime": {
+      "type": "date",
+      "display_name" : "Departure Date",
+      "required": true
+    },
+    "arrival_datetime": {
+      "type": "date",
+      "display_name" : "Arrival Date",
+      "required": true
+    },
+    "activity_duration": {
+      "type": "number",
+      "display_name" : "Activity Duration"
+    },
+    "pilot": {
+      "type": "string",
+	  "is_object" : true,
+	  "used_relation" : "mission_pilot"
+	  "related_property" : "trigram",
+      "required": false
+    },
+    "copilot": {
+      "type": "string",
+	  "is_object" : true,
+	  "related_property" : "trigram",
+      "required": false
+    },
+    "engineer": {
+      "type": "string",
+	  "is_object" : true,
+	  "related_property" : "trigram",
+      "required": false
+    },
+    "num_person_on_board": {
+      "type": "number",
+      "display_name" : "POB"
+    },	
+    "msn": {
+      "type": "string",
+	  "is_object" : true,
+	  "related_property" : "serial_number",
+      "required": false
+    },	
+    "mission_type": {
+      "type": "string",
+	  "related_property" : "name",
+      "required": false
+    },	
+    "departure_airport": {
+      "type": "string",
+	  "is_object" : true,
+	  "related_property" : "ICAO_code",
+      "required": false
+    },	
+    "arrival_airport": {
+      "type": "string",
+	  "is_object" : true,
+	  "related_property" : "ICAO_code",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+	mission_pilot : {
+		source_object : "mission",
+		destination_object : "crew",
+		source_key : "pilot_idr",
+		destination_key : "id"
+		
+	}
+  },
+  "acls": [],
+  "methods": {}
+}

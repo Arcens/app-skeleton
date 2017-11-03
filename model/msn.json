@@ -1,0 +1,65 @@
+{
+  "name": "msn",
+  "plural": "msn",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type":"string",
+      "id": true,
+      "name":"id",
+      "display": false
+    },
+    "serial_number": {
+      "type": "string",
+	  "display_name" : "serial number",
+      "required": true
+    },
+    "provisional_registration": {
+      "type": "date",
+      "string" : "provisional registration",
+      "required": true
+    },
+    "aircraft_manager": {
+      "type": "string",
+      "display_name" : "aircraft manager",
+      "required": false,
+      "display": false
+    },
+    "delivery_manager": {
+      "type": "string",
+      "display_name" : "delivery manager",
+      "required": false,
+      "display": false
+    },
+    "customer_inspection_manager": {
+      "type": "string",
+      "display_name" : "customer inspection manager",
+      "required": false,
+      "display": false
+    },
+    "disponibility_date": {
+      "type": "date",
+      "display_name" : "disponibility date",
+      "required": true
+    },
+    "planned_delivery_date": {
+      "type": "date",
+      "display_name" : "planned delivery date",
+      "required": true
+    },
+    "parking_spot": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,31 @@
+{
+  "name": "swat2",
+  "version": "1.0.0",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node .",
+    "pretest": "jshint .",
+    "posttest": "nsp check"
+  },
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "gulp": "^3.9.1",
+    "gulp-bower": "",
+    "gulp-data": "",
+    "gulp-install": "0.3.0",
+    "gulp-nunjucks-api": "",
+    "gulp-rename": "",
+    "mkdirp": "",
+    "shimmer": "^1.1.0"
+  },
+  "devDependencies": {
+    "gulp-inject": "^4.1.0",
+    "jshint": "^2.5.6",
+    "nsp": "^2.1.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "description": "swat2"
+}

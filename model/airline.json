@@ -1,0 +1,46 @@
+{
+  "name": "airline",
+  "plural": "airlines",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type":"string",
+      "id": true,
+      "name":"id",
+      "display": false
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "call_sign": {
+      "type": "string",
+	  "display_name" : "call sign",
+      "required": true
+    },
+    "OACI_code": {
+      "type": "string",
+	  "display_name" : "OACI code",
+      "required": true
+    },	
+    "IATA_code": {
+      "type": "string",
+	  "display_name" : "IATA code",
+      "required": true
+    },
+    "logo": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,36 @@
+
+body, html { height:100%; }
+.full_height { height:100%; }
+
+hr {
+    height: 1px;
+    background-color:#ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+table {
+	background-color: white;
+	margin-bottom: 0px;
+}
+
+.well>.table {
+	margin-bottom: 0px;
+	background-color:white;
+ }
+ 
+#loading-bar-spinner .spinner-icon {
+	display:none;
+}
+
+.aligner {
+  display: flex;
+  align-items: center;
+  height:100%;
+  justify-content: center;
+}
+
+.aligner-item {
+  max-width: 50%;
+}

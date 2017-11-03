@@ -1,0 +1,61 @@
+{
+  "name": "crew",
+  "plural": "crews",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type":"string",
+      "id": true,
+      "name":"id",
+      "display": false
+    },
+    "first_name": {
+      "type": "string",
+	  "display_name" : "First Name",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+	  "display_name" : "Last Name",
+      "required": true
+    },
+    "trigram": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "atom_alert_email": {
+      "type": "string",
+	  "display_name" : "atom email",
+      "required": true
+    },
+    "last_login": {
+      "type": "date",
+      "required": true,
+	  "display" : false
+    },
+    "start_date": {
+      "type": "date",
+      "display_name" : "Start Date",
+      "required": false
+    },
+    "end_date": {
+      "type": "date",
+      "display_name" : "End Date",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+
+  },
+  "acls": [],
+  "methods": {}
+}
